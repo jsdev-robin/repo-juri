@@ -43,27 +43,6 @@ console.log(myLib());
 
 ---
 
-## 🔍 What I've Tried
-
-- Confirmed that `libs/my-lib/src/index.ts` correctly exports `myLib`:
-  ```ts
-  export * from './lib/my-lib';
-  ```
-- Verified that `paths` in `tsconfig.base.json` includes:
-  ```json
-  {
-    "compilerOptions": {
-      "paths": {
-        "@juri/my-lib": ["libs/my-lib/src/index.ts"]
-      }
-    }
-  }
-  ```
-- Ran `nx build my-lib` successfully.
-- Tried restarting VS Code and clearing `.tsbuildinfo`.
-
----
-
 ## 🛠️ Expectation
 
 I want to be able to import `myLib` from `@juri/my-lib` across my apps without type/module errors.
