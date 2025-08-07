@@ -29,7 +29,8 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      }
+      },
+      "exclude": ["libs/my-lib/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -53,6 +54,15 @@
         "targetName": "test"
       },
       "exclude": ["apps/gateway-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": ["libs/my-lib/*"],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      }
     }
   ],
   "targetDefaults": {
